@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: e13n-grpc-deployment
+  labels:
+    app: e13n_grpc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: e13n_grpc
+  template:
+    metadata:
+      labels:
+        app: e13n_grpc
+    spec:
+      containers:
+      - name: e13n-grpc
+        image: e13n_grpc
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8484

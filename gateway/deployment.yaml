@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: e13n-gateway-deployment
+  labels:
+    app: e13n_gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: e13n_gateway
+  template:
+    metadata:
+      labels:
+        app: e13n_gateway
+    spec:
+      containers:
+        - name: e13n-gateway
+          image: e13n_gateway
+          imagePullPolicy: Never
+          ports:
+          - containerPort: 8484
+          env:
+            - name: GRPC_ADDRESS
+              value: "e13n-grpc-service:50051"
