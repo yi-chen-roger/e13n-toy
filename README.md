@@ -1,7 +1,7 @@
-# e18n-toy
+# e13n-toy
 
 ## Intro
-e18n-toy is a toy project. The purpose of this project is
+e13n-toy is a toy project. The purpose of this project is
 - to verify system networking in the k8s environment
 - to test k8s cloud deployment
 - to help decision making for the real externalization projects
